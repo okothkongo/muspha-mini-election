@@ -19,6 +19,7 @@ defmodule MusphaWeb.Router do
 
     live "/", PageLive, :index
     live "/electors", ElectorLive.Index, :index
+    live "/positions", PostionLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
