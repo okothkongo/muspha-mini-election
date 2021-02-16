@@ -9,7 +9,8 @@ Muspha.Accounts.create_elector!(%{
   first_name: "test first name",
   last_name: "test second name",
   password: "someStrong@1",
-  email: "test@test.com"
+  email: "test@test.com",
+  admission_no: "PH123/122"
 })
 
 #

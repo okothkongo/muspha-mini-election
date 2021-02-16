@@ -5,11 +5,11 @@ defmodule Muspha.Repo.Migrations.CreateElectors do
     execute "CREATE EXTENSION IF NOT EXISTS citext", ""
 
     create table(:electors) do
-      add :email, :citext
-      add :hashed_password, :string
-      add :first_name, :string
-      add :last_name, :string
-      add :admission_no, :string
+      add :email, :citext, null: false
+      add :hashed_password, :string, null: false
+      add :first_name, :string, null: false
+      add :last_name, :string, null: false
+      add :admission_no, :string, null: false
 
       timestamps()
     end
