@@ -1,0 +1,23 @@
+<h1>Students Allowed to Vote</h1>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Admin No</th>
+      <th>Email</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="electors">
+    <%= for elector <- @electors do %>
+      <tr id="elector-<%= elector.id %>">
+        <td><%= elector.first_name %></td>
+        <td><%= elector.last_name %></td>
+        <td><%= elector.admission_no %></td>
+        <td><%= elector.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

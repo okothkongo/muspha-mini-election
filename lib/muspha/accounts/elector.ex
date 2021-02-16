@@ -17,6 +17,7 @@ defmodule Muspha.Accounts.Elector do
   def changeset(elector, attrs) do
     elector
     |> cast(attrs, [:email, :password, :first_name, :last_name, :admission_no])
+    |> validate_required([:first_name, :last_name])
     |> unique_constraint(:email)
     |> validate_format(:email, email_regex())
     |> validate_password()
