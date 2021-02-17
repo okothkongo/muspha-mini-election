@@ -7,6 +7,7 @@ defmodule Muspha.Accounts do
   alias Muspha.Repo
 
   alias Muspha.Accounts.Elector
+  alias Muspha.Accounts.Position
 
   @doc """
   Returns the list of electors.
@@ -82,5 +83,15 @@ defmodule Muspha.Accounts do
   """
   def change_elector(%Elector{} = elector, attrs \\ %{}) do
     Elector.changeset(elector, attrs)
+  end
+
+  def create_position!(attrs \\ %{}) do
+    %Position{}
+    |> Position.changeset(attrs)
+    |> Repo.insert!()
+  end
+
+  def list_positions do
+    Repo.all(Position)
   end
 end

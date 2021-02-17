@@ -13,6 +13,22 @@ Muspha.Accounts.create_elector!(%{
   admission_no: "PH123/122"
 })
 
+[
+  "chairperson",
+  "deputy chairperson",
+  "secrectary general",
+  "assistant secrectary general",
+  "linkage coordinator",
+  "organizing secrectary",
+  "assistant organizing secrectary",
+  "treasurer"
+]
+|> Enum.each(fn name ->
+  Muspha.Accounts.create_position!(%{
+    name: name
+  })
+end)
+
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
